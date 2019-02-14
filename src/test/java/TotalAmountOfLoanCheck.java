@@ -11,7 +11,7 @@ public class TotalAmountOfLoanCheck {
     Code must be published on GitHub
     Formula to calculate loan expenses can be found in Google - doesn’t matter which one ;)*/
 
-    private double loanCalculation(double clientLoanAmount, double expectedAmountToPay) {
+    private double loanCalculation(double clientLoanAmount) {
 
         double percentsForFirstTenYears = 0.1;
         double percentsForYearsFrom10till20 = 0.08;
@@ -29,8 +29,8 @@ public class TotalAmountOfLoanCheck {
     @Test
     public void totalAmountOfLoanCheck() {
 
+        double totalAmountToPay = loanCalculation(3000.00);
         double expectedAmountToPay = 5400.00;
-        double totalAmountToPay = loanCalculation(3000.00, 5400.00);
 
         Assertions.assertEquals(expectedAmountToPay, totalAmountToPay, "Total amount is not equal.");
 
